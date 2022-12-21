@@ -11,7 +11,7 @@ const fileToLowerCaseArray = (filePath: string): Array<any> => {
     .map((s: string) => s.toLowerCase());
 }
 
-const originalWords = fileToLowerCaseArray("./data/AllWords/2of4brif.txt");
+const originalWords = fileToLowerCaseArray("./data/AllWords/corpus.txt");
 const removedWordsSet = new Set(fileToLowerCaseArray("./data/AllWords/wordsRemoved.txt"));
 const addedWords = fileToLowerCaseArray("./data/AllWords/wordsAdded.txt");
 
