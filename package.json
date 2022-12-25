@@ -19,7 +19,6 @@
     "bracketSameLine": true
   },
   "pre-commit": [
-    "test",
     "lintfix"
   ],
   "dependencies": {
