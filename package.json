@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "deploy": "echo 'www.molorig.xyz' > ./dist/CNAME && gh-pages -d dist",
+    "deploy": "echo 'www.meghrig.xyz' > ./dist/CNAME && gh-pages -d dist",
     "preview": "vite preview",
     "lint": "yarn lint:prettier",
     "lint:prettier": "prettier --check .",

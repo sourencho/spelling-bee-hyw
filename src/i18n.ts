@@ -1,11 +1,11 @@
 import { createI18n } from "vue-i18n";
-import en from "./locales/en.json";
+import hyw from "./locales/hyw.json";
 
 export const i18n = createI18n({
   legacy: false,
   globalInjection: true,
-  locale: "en",
+  locale: "hyw",
   messages: {
-    en,
+    hyw,
   },
 });

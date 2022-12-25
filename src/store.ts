@@ -6,7 +6,7 @@ import { differenceInDays, isSameDay } from "date-fns";
 import { incrementDups } from "./utils";
 import { Answer } from "./models/answer";
 
-const epoch = new Date("2022-01-01");
+const epoch = new Date("2022-12-23");
 
 export const useMainStore = defineStore({
   id: "main",

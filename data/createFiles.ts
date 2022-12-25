@@ -10,9 +10,11 @@ import { shuffle } from "../src/utils";
 // config
 const minNumAnswers = 20;
 const writeSupplementaryFiles = true;
-// 10 years worth of puzzles per file. avoid slow loading page and need for git-lfs with all puzzles in one file.
+// 1 years worth of puzzles per file. avoid slow loading page and need for git-lfs with all puzzles in one file.
 // need to update to use allAnswers2 10 years from now. see you in the future o_0
-const numPuzzlesPerFile = 3650;
+const numPuzzlesPerFile = 365;
+
+const maxNumOfFiles = 2;
 
 const data = readFileSync("./data/AllWords.txt");
 const words = data
@@ -45,14 +47,11 @@ const uniqueLetterCombinationsShuffled = shuffle(Array.from(uniqueLetterCombinat
 
 let allAnswers = [];
 
-const createPuzzleBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
-createPuzzleBar.start(numUniqueLetterCombinations * 7, 0);
 let numProcessed = 0;
 
 for (let offset = 0; offset < 7; offset++) {
   for (let i = 0; i < numUniqueLetterCombinations; i++) {
     numProcessed += 1;
-    createPuzzleBar.update(numProcessed);
     const availableLetters = uniqueLetterCombinationsShuffled[i] as string;
     // for each unique letter combination, choose middle letter in sequence
     // e.g. [0,1,2,3,4,5,6,0,1,2,3...], [1,2,3,4,5,6,0,1,2,3...]
@@ -73,10 +72,13 @@ for (let offset = 0; offset < 7; offset++) {
         `${JSON.stringify(allAnswers, null, 2)}`
       );
       allAnswers = [];
+
+      if(fileNum >= maxNumOfFiles) {
+          process.exit()
+      }
     }
   }
 }
 
-createPuzzleBar.stop();
 // 52493 puzzle combinations
 // 52493 / 365 = 143 years worth of games

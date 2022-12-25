@@ -66,19 +66,19 @@ const submitGuess = ({ $t, guess }: { $t: Function; guess: string }) => {
 
     <div class="hive-actions">
       <button
-        class="hive-action hive-action__delete sb-touch-button"
-        style="margin-left: 0; min-width: 5.5em"
-        @click="userGuess = userGuess.slice(0, -1)">
-        {{ $t("Delete") }}
+        class="hive-action hive-action__submit sb-touch-button"
+        style="min-width: 12em"
+        @click="submitGuess({ $t, guess: userGuess })">
+        {{ $t("Enter") }}
       </button>
       <button
         class="hive-action hive-action__shuffle sb-touch-button"
         @click="otherLetters = shuffle(otherLetters, Math.random())"></button>
       <button
-        class="hive-action hive-action__submit sb-touch-button"
-        style="min-width: 5.5em"
-        @click="submitGuess({ $t, guess: userGuess })">
-        {{ $t("Enter") }}
+        class="hive-action hive-action__delete sb-touch-button"
+        style="margin-left: 0; min-width: 12em"
+        @click="userGuess = userGuess.slice(0, -1)">
+        {{ $t("Delete") }}
       </button>
     </div>
   </div>
@@ -88,7 +88,6 @@ const submitGuess = ({ $t, guess }: { $t: Function; guess: string }) => {
 @import "../assets/styles/_variables";
 
 .user-guess {
-  text-transform: uppercase;
   margin-bottom: 10px;
   height: 35px;
   font-weight: 700;
@@ -128,7 +127,6 @@ const submitGuess = ({ $t, guess }: { $t: Function; guess: string }) => {
   font-weight: 700;
   font-size: 30px;
   text-anchor: middle;
-  text-transform: uppercase;
   pointer-events: none;
 }
 .hive-cell:first-child .cell-fill {
@@ -158,13 +156,14 @@ const submitGuess = ({ $t, guess }: { $t: Function; guess: string }) => {
   transform: translate(-75%, 50%);
 }
 .hive-actions {
-  margin-top: 1em;
+  margin-top: 3em;
   text-align: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: nowrap;
+  gap: 10px;
 }
 .hive-actions button {
   transition: all 0.2s ease;
