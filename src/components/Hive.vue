@@ -156,7 +156,7 @@ const submitGuess = ({ $t, guess }: { $t: Function; guess: string }) => {
   transform: translate(-75%, 50%);
 }
 .hive-actions {
-  margin-top: 3em;
+  margin-top: 1em;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -164,6 +164,7 @@ const submitGuess = ({ $t, guess }: { $t: Function; guess: string }) => {
   justify-content: center;
   flex-wrap: nowrap;
   gap: 10px;
+  margin-bottom: 1.5em;
 }
 .hive-actions button {
   transition: all 0.2s ease;
@@ -194,13 +195,14 @@ polygon.cell-fill {
   user-select: none;
   cursor: pointer;
 }
+
 .hive-action__shuffle {
   background: url(../assets/shuffle.svg) center no-repeat;
   background-color: #fff;
   background-size: auto;
-  background-size: 60%;
-  height: 50px;
-  min-width: 50px;
+  background-size: 50%;
+  height: 40px;
+  min-width: 40px;
 }
 html.dark {
   .hive-action,

@@ -71,7 +71,7 @@ store.startGame({ allAnswers });
   <div class="common-layout fireworks">
     <div class="beforeFireworks" v-if="showGameWonModal" />
     <div class="afterFireworks" v-if="showGameWonModal" />
-    <el-header height="2em" id="title-header">
+    <el-header height="2.5em" id="title-header">
       <h2>
         <strong> Մեղրիկ </strong>
         <span> {{ store.getGameDateString }} </span>
@@ -217,7 +217,7 @@ h2 span {
   padding: 0 10px;
 
   // account for 10px padding on either side of #app
-  max-width: calc(100% - 20px);
+  max-width: 100%;
   max-height: 100vh;
   #title-header {
     margin: 0;
