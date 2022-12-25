@@ -67,7 +67,7 @@ const submitGuess = ({ $t, guess }: { $t: Function; guess: string }) => {
     <div class="hive-actions">
       <button
         class="hive-action hive-action__submit sb-touch-button"
-        style="min-width: 12em"
+        style="min-width: 7em"
         @click="submitGuess({ $t, guess: userGuess })">
         {{ $t("Enter") }}
       </button>
@@ -76,7 +76,7 @@ const submitGuess = ({ $t, guess }: { $t: Function; guess: string }) => {
         @click="otherLetters = shuffle(otherLetters, Math.random())"></button>
       <button
         class="hive-action hive-action__delete sb-touch-button"
-        style="margin-left: 0; min-width: 12em"
+        style="margin-left: 0; min-width: 7em"
         @click="userGuess = userGuess.slice(0, -1)">
         {{ $t("Delete") }}
       </button>
@@ -89,6 +89,7 @@ const submitGuess = ({ $t, guess }: { $t: Function; guess: string }) => {
 
 .user-guess {
   margin-bottom: 10px;
+  margin-top: 25px;
   height: 35px;
   font-weight: 700;
   font-size: 25px;
@@ -159,9 +160,9 @@ const submitGuess = ({ $t, guess }: { $t: Function; guess: string }) => {
   margin-top: 1em;
   text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: nowrap;
   gap: 10px;
   margin-bottom: 1.5em;
@@ -185,7 +186,6 @@ polygon.cell-fill {
   flex: 1;
   background-color: #fff;
   font-size: 18px;
-  margin: 0 12px;
   color: #333;
   border: 1px solid #ccc;
   border-radius: 40px;
