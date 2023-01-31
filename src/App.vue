@@ -74,6 +74,7 @@ store.startGame({ allAnswers });
     <el-header height="2.5em" id="title-header">
       <h2>
         <strong> Մեղրիկ </strong>
+        <span>alpha </span>
         <span> {{ store.getGameDateString }} </span>
       </h2>
     </el-header>
